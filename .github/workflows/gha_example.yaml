@@ -59,11 +59,11 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
       -
         name: Docker Scout
-          id: docker-scout
-          uses: docker/scout-action@v1
-          with:
-            command: cves,recommendations,compare
-            to-latest: false
-            ignore-base: true
-            ignore-unchanged: true
-            only-fixed: true
+        id: docker-scout
+        uses: docker/scout-action@v1
+        with:
+          command: cves,recommendations,compare
+          to-latest: false
+          ignore-base: true
+          ignore-unchanged: true
+          only-fixed: true
