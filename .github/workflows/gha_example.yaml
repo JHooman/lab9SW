@@ -55,4 +55,9 @@ jobs:
           cache-to: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/example:cache  
           tags: ${{ steps.meta.outputs.tags }}
-      
+    - name: Install Docker Scout
+      run: |
+        curl -fsSL https://get.docker.com | sh docker scout quickstart
+
+    - name: Run Docker Scout Scan
+      run: docker scout cves my-image:latest
